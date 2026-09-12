@@ -1,0 +1,35 @@
+<% layout("./layouts/boilerplate.ejs") %>
+<div style="display: flex;">
+  <nav class="asset-filter-row" aria-label="Dwellr categories">
+        <a class="asset-filter active" href="/listings">
+          <img src="/assets/globe-svgrepo-com.svg" alt="">
+          <span>All</span>
+        </a>
+        <a class="asset-filter" href="/listings">
+          <img src="/assets/home-svgrepo-com.png" alt="">
+          <span>Home</span>
+        </a>
+        <a class="asset-filter" href="/listings">
+          <img src="/assets/hot-air-balloon-svgrepo-com.svg" alt="">
+          <span>Experience</span>
+        </a>
+      </nav>
+</div>
+<div class="mt-4">
+  <h4><b>Find your perfect stay</b></h4>
+  <p style="opacity: 0.7;font-size: 0.9rem;">Explore unique places to stay for your next gateway</p>
+</div>
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 mt-3">
+        <%for(listing of allListings){%>
+        <a href="/listings/<%= listing._id %>" class="listing-link col">
+        <div class="card listing-card">
+            <img src="<%=listing.image.url%>" class="card-image card-img-top" alt="">
+            <div class="card-img-overlay"></div>
+            <div class="card-body">
+             <b><h5 class="card-title"><%=listing.title%></h5></b>
+              <p class="card-text">&#8377;<%= listing.price.toLocaleString("en-IN") %> /night</p>
+            </div>
+        </div>
+        </a>      
+       <% }%>  
+    </div>    

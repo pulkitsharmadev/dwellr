@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-md sticky-top">
+  <div class="navbar-shell">
+    <a class="navbar-brand" href="/listings" aria-label="Dwellr home">
+      <i class="fa-solid fa-compass brand-icon"></i>
+      <span>Dwellr</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <form class="navbar-search" action="/listings" method="get" role="search">
+        <label class="search-segment search-location">
+          <i class="fa-solid fa-location-dot search-icon location-icon"></i>
+          <span>Where</span>
+          <input type="search" name="location" placeholder="Search destinations" autocomplete="off">
+        </label>
+        <span class="search-divider" aria-hidden="true"></span>
+        <label class="search-segment">
+          <i class="fa-solid fa-calendar-check search-icon checkout-icon"></i>
+          <span>When</span>
+          <input type="date" name="checkOut">
+        </label>
+        <span class="search-divider" aria-hidden="true"></span>
+        <label class="search-segment search-guests">
+          <i class="fa-solid fa-user-group search-icon guests-icon"></i>
+          <span>Guests</span>
+          <input type="number" name="guests" min="1" placeholder="Add guests">
+        </label>
+        <button class="search-submit" type="submit" aria-label="Search listings" title="Search listings">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="navbar-actions">
+        <a class="host-link" href="/listings/new">Become a host</a>
+        <div class="account-menu dropdown">
+          <button class="account-button" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open account menu">
+            <i class="fa-solid fa-bars account-bars"></i>
+            <i class="fa-solid fa-circle-user account-avatar"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end account-dropdown">
+            <% if(!currUser){ %>
+              <li><a class="dropdown-item" href="/help">Need Help?</a></li>
+              <li><a class="dropdown-item" href="/login">Log in</a></li>
+              <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+            <% } else { %>
+              <li><a class="dropdown-item" href="/logout">Log out</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

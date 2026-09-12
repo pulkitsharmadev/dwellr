@@ -1,0 +1,47 @@
+<% layout("./layouts/boilerplate.ejs");%>
+<div class="row">
+    <div class="col-8 offset-2">
+         <h3>Edit Your Details </h3>
+    <form action="/listings/<%=listing._id%>?_method=PUT" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+               <input type="text" value="<%= listing.title %>" name="title" class="form-control" required>
+               <div class="invalid-feedback">Add some Title</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+              <textarea name="description" class="form-control" required><%= listing.description %></textarea>
+              <div class="invalid-feedback">Add some Description</div>
+        </div>
+        <div class="mb-3">
+            <p>Original Image</p>
+            <img src="<%= listing.image.url %>" alt="listing image">
+        </div>
+        <div class="mb-3"> 
+            <label for="image" class="form-label">Image</label>
+            <input type="file" value="<%= listing.image %>" name="image" class="form-control" >
+        </div>
+        <div class=" row mb-3">
+            <div class="col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" value="<%= listing.price %>" name="price" class="form-control" required>
+                <div class="invalid-feedback">Add some Price</div>
+                </div>
+            <div class="col-md-8">
+                <label for="country" class="form-label">Country</label>
+                 <input type="text" value="<%= listing.country %>" name="country" class="form-control" required>
+                 <div class="invalid-feedback">Add some Country</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label"></label>
+            <input type="text" value="<%= listing.location %>" name="location" class="form-control" required>
+            <div class="invalid-feedback">Add some location</div>
+        </div>
+        <div class="offset-4 d-grid col-4">
+            <button class="btn btn-secondary">Edit</button>
+        </div>
+    </form>
+    </div>
+</div>
+   
