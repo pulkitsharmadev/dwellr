@@ -324,9 +324,10 @@ body{
 }
 
 .listing-card{
-    width:18rem;
+    width: 100%;
+    max-width: 22rem;
     border: none;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     background-color: transparent;
     transition: transform 180ms ease, filter 180ms ease;
 }
@@ -338,13 +339,26 @@ body{
 
 .card-image{
     width: 100% !important;
-    height: 18rem;
+    aspect-ratio: 1 / 0.95;
+    height: auto;
     border-radius: 1rem !important;
     object-fit: cover;
 }
 
 .card-body{
-    padding:0;
+    padding: 0.7rem 0.15rem 0;
+}
+
+.card-title{
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.listing-card .card-text{
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
 }
 
 .listing-link{
@@ -470,6 +484,11 @@ body{
         gap: 1.5rem;
         padding-right: 1rem;
         padding-left: 1rem;
+        scrollbar-width: none;
+    }
+
+    .asset-filter-row::-webkit-scrollbar{
+        display: none;
     }
 
     .container{
@@ -491,7 +510,17 @@ body{
     }
 
     .listing-card{
+        max-width: none;
         width: 100%;
+    }
+
+    .card-image{
+        aspect-ratio: 1 / 0.9;
+    }
+
+    .row.row-cols-sm-1 > .listing-link{
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     .show-img,
