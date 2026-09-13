@@ -431,9 +431,17 @@ body{
 }
 
 @media (max-width: 575px){
+    .navbar{
+        padding: 0.65rem 1rem;
+    }
+
+    .navbar-shell{
+        gap: 0.75rem;
+    }
+
     .navbar-search{
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
         gap: 0.25rem;
         min-height: auto;
         padding: 0.5rem;
@@ -453,9 +461,33 @@ body{
     }
 
     .search-submit{
-        grid-column: 2;
-        grid-row: 2 / span 2;
+        grid-column: 3;
+        grid-row: 2;
         align-self: center;
+    }
+
+    .asset-filter-row{
+        gap: 1.5rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .container{
+        width: 100%;
+        max-width: none;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .row.offset-2.col-8,
+    .row.offset-2.col-8 > .col-8{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .row.offset-2.col-8 > .col-8{
+        padding-right: 0;
+        padding-left: 0;
     }
 
     .listing-card{
